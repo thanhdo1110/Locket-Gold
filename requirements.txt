@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+aiohttp
+python-telegram-bot[all]

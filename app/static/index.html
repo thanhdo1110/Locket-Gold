@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locket Gold Activator</title>
+    <meta name="description"
+        content="Kích hoạt Locket Gold miễn phí — nhập username và nhận DNS bảo vệ ngay lập tức." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <!-- Font Awesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/static/main.css" />
+</head>
+
+<body>
+
+    <!-- Background particles -->
+    <div class="bg-particles" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
+
+    <div class="page-wrapper">
+
+        <!-- ===== HERO ===== -->
+        <header class="hero">
+            <div class="logo-badge">
+                <i class="fa-solid fa-bolt logo-icon"></i>
+                <span>Locket</span><span class="logo-gold">Gold</span>
+            </div>
+            <h1 class="hero-title">
+                Kích Hoạt<br />
+                <span class="gradient-text">Locket Gold</span>
+            </h1>
+            <p class="hero-sub">
+                <i class="fa-solid fa-shield-halved"></i>
+                Nhập username hoặc link Locket — nhận Gold &amp; DNS bảo vệ ngay tức thì.
+            </p>
+        </header>
+
+        <!-- ===== ACTIVATION CARD ===== -->
+        <main class="main-content">
+            <section class="card activation-card" id="activationSection">
+                <div class="card-header">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span class="card-title">Kích Hoạt Tài Khoản</span>
+                </div>
+
+                <form id="activateForm" autocomplete="off" novalidate>
+                    <div class="input-group">
+                        <label for="usernameInput" class="input-label">Username / Link Locket</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user input-icon"></i>
+                            <input type="text" id="usernameInput" name="username" class="text-input"
+                                placeholder="vd: johndoe  hoặc  locket.cam/johndoe" spellcheck="false" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-activate" id="activateBtn">
+                        <span class="btn-text">
+                            <i class="fa-solid fa-bolt"></i> KÍCH HOẠT NGAY
+                        </span>
+                        <span class="btn-loader" hidden>
+                            <span class="spinner"></span> Đang xử lý...
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Progress bar -->
+                <div class="progress-wrap" id="progressWrap" hidden>
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <!-- Terminal log -->
+                <div class="terminal-wrap" id="terminalWrap" hidden>
+                    <div class="terminal-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="terminal-title">System Log</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody"></div>
+                </div>
+            </section>
+
+            <!-- ===== RESULT ===== -->
+            <section class="result-section" id="resultSection" hidden>
+
+                <!-- Error card -->
+                <div class="card result-card error-card" id="errorCard" hidden>
+                    <i class="fa-solid fa-circle-xmark result-icon error-icon-fa"></i>
+                    <h2 class="result-title error-title">Kích Hoạt Thất Bại</h2>
+                    <p class="result-msg" id="errorMsg"></p>
+                    <button class="btn-retry" id="retryBtn">
+                        <i class="fa-solid fa-rotate-right"></i> Thử Lại
+                    </button>
+                </div>
+
+                <!-- Success card -->
+                <div class="result-card success-card" id="successCard" hidden>
+                    <div class="success-glow"></div>
+                    <i class="fa-solid fa-trophy result-icon success-icon-fa"></i>
+                    <h2 class="result-title success-title">KÍCH HOẠT THÀNH CÔNG!</h2>
+
+                    <div class="uid-row">
+                        <span class="uid-label"><i class="fa-solid fa-fingerprint"></i> UID</span>
+                        <code class="uid-value" id="resultUid"></code>
+                    </div>
+                    <div class="uid-row">
+                        <span class="uid-label"><i class="fa-solid fa-tag"></i> Username</span>
+                        <code class="uid-value" id="resultUsername"></code>
+                    </div>
+                    <div class="uid-row">
+                        <span class="uid-label"><i class="fa-solid fa-calendar-days"></i> Plan</span>
+                        <code class="uid-value">Gold — 30 ngày</code>
+                    </div>
+
+                    <!-- DNS Guide -->
+                    <div class="dns-section">
+                        <div class="dns-header">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>HƯỚNG DẪN CÀI DNS BẢO VỆ</span>
+                        </div>
+                        <p class="dns-note">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            Bắt buộc cài DNS trong <strong>45 giây</strong> để giữ Gold!
+                        </p>
+
+                        <div class="dns-cards">
+                            <!-- iOS -->
+                            <div class="dns-card ios-card">
+                                <div class="dns-card-icon"><i class="fa-brands fa-apple"></i></div>
+                                <div class="dns-card-title">iOS (iPhone / iPad)</div>
+                                <ol class="dns-steps">
+                                    <li>Mở link bên dưới bằng <strong>Safari</strong></li>
+                                    <li>Bấm <strong>Cho phép</strong></li>
+                                    <li>Vào <strong>Cài đặt → Đã tải về → Cài đặt</strong></li>
+                                </ol>
+                                <a class="btn-dns-ios" id="iosDnsLink" href="#" target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-mobile-screen-button"></i> Bấm để cài DNS (Safari)
+                                </a>
+                            </div>
+
+                            <!-- Android -->
+                            <div class="dns-card android-card">
+                                <div class="dns-card-icon"><i class="fa-brands fa-android"></i></div>
+                                <div class="dns-card-title">Android</div>
+                                <ol class="dns-steps">
+                                    <li>Vào <strong>Cài đặt → Kết nối → Thêm</strong></li>
+                                    <li>Chọn <strong>Private DNS</strong></li>
+                                    <li>Nhập hostname bên dưới:</li>
+                                </ol>
+                                <div class="hostname-box">
+                                    <code class="hostname-text" id="androidHostname"></code>
+                                    <button class="copy-btn" id="copyBtn" title="Sao chép">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                                <span class="copy-feedback" id="copyFeedback">
+                                    <i class="fa-solid fa-check"></i> Đã sao chép!
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="dns-tip">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <strong>Lưu ý</strong>: Sau khi cài DNS xong, mở app Locket và kiểm tra Gold đã Active chưa
+                            nhé!
+                        </p>
+                    </div>
+
+                    <button class="btn-retry" id="retryBtnSuccess">
+                        <i class="fa-solid fa-rotate-right"></i> Kích Hoạt Tài Khoản Khác
+                    </button>
+                </div>
+            </section>
+
+            <!-- ===== HOW IT WORKS ===== -->
+            <section class="guide-section">
+                <h2 class="guide-title">Cách Hoạt Động</h2>
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h3 class="step-title">Nhập Username</h3>
+                        <p class="step-desc">Nhập username Locket hoặc dán link locket.cam của bạn vào ô tìm kiếm.</p>
+                    </div>
+                    <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="guide-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 class="step-title">Kích Hoạt Gold</h3>
+                        <p class="step-desc">Hệ thống tự động inject gói Gold 30 ngày vào tài khoản của bạn.</p>
+                    </div>
+                    <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="guide-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 class="step-title">Cài DNS Bảo Vệ</h3>
+                        <p class="step-desc">Cài DNS Anti-Revoke để Gold không bị thu hồi. iOS &amp; Android đều được hỗ
+                            trợ.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== FAQ ===== -->
+            <section class="faq-section">
+                <h2 class="guide-title">Câu Hỏi Thường Gặp</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-q">
+                            <i class="fa-solid fa-circle-question faq-icon"></i>
+                            DNS dùng để làm gì?
+                        </summary>
+                        <p class="faq-a">DNS block các máy chủ RevenueCat/Apple kiểm tra bản quyền, giúp Gold không bị
+                            thu hồi khi server reset.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q">
+                            <i class="fa-solid fa-circle-question faq-icon"></i>
+                            Gold có hết hạn không?
+                        </summary>
+                        <p class="faq-a">Gold được kích hoạt 30 ngày. Sau khi hết hạn, bạn có thể kích hoạt lại bằng
+                            cách nhập lại username.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q">
+                            <i class="fa-solid fa-circle-question faq-icon"></i>
+                            Cần nhập email hay username?
+                        </summary>
+                        <p class="faq-a">Bạn có thể nhập username Locket (vd: <code>johndoe</code>) hoặc dán thẳng link
+                            <code>locket.cam/johndoe</code>.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q">
+                            <i class="fa-solid fa-circle-question faq-icon"></i>
+                            Kích hoạt an toàn không?
+                        </summary>
+                        <p class="faq-a">Quá trình chỉ đọc UID công khai từ profile của bạn và gửi receipt qua API
+                            RevenueCat. Chúng tôi không lưu mật khẩu hay thông tin nhạy cảm.</p>
+                    </details>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <p class="footer-text">
+                Powered by
+                <a class="footer-link" href="https://github.com/thanhdo1110/Locket-Gold" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i> Locket-Gold
+                </a>
+            </p>
+            <p class="footer-sub">Open-source · Free to use · No data stored</p>
+        </footer>
+
+    </div><!-- /page-wrapper -->
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>
