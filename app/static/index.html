@@ -4,9 +4,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locket Gold Activator</title>
+    <title>Locket Gold Activator — Kích Hoạt Gold Miễn Phí</title>
+    <link rel="icon" href="https://locket.cam/favicon.ico" />
+
+    <!-- Primary SEO -->
     <meta name="description"
-        content="Kích hoạt Locket Gold miễn phí — nhập username và nhận DNS bảo vệ ngay lập tức." />
+        content="Kích hoạt Locket Gold miễn phí chỉ trong vài giây. Nhập username hoặc link Locket, nhận Gold 30 ngày và DNS Anti-Revoke bảo vệ ngay lập tức." />
+    <meta name="keywords"
+        content="locket gold, locket gold free, kích hoạt locket gold, locket gold activator, locket gold miễn phí, locket cam gold, dns locket" />
+    <meta name="author" content="thanhdo1110" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FFD700" />
+    <link rel="canonical" href="https://locket-gold.vercel.app/" />
+
+    <!-- Open Graph (Facebook / Zalo / Discord) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://locket-gold.vercel.app/" />
+    <meta property="og:title" content="Locket Gold Activator — Kích Hoạt Gold Miễn Phí" />
+    <meta property="og:description"
+        content="Kích hoạt Locket Gold miễn phí chỉ trong vài giây. Nhập username, nhận Gold 30 ngày + DNS Anti-Revoke bảo vệ ngay." />
+    <meta property="og:image" content="https://locket.cam/og-image.png" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="Locket Gold Activator" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Locket Gold Activator — Kích Hoạt Gold Miễn Phí" />
+    <meta name="twitter:description"
+        content="Kích hoạt Locket Gold miễn phí, nhận DNS Anti-Revoke bảo vệ ngay lập tức." />
+    <meta name="twitter:image" content="https://locket.cam/og-image.png" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Locket Gold Activator",
+      "description": "Kích hoạt Locket Gold miễn phí. Nhập username hoặc link Locket, nhận Gold 30 ngày và DNS Anti-Revoke.",
+      "url": "https://locket-gold.vercel.app/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "VND"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "thanhdo1110",
+        "url": "https://github.com/thanhdo1110"
+      }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -37,8 +86,8 @@
                 <span class="gradient-text">Locket Gold</span>
             </h1>
             <p class="hero-sub">
-                <i class="fa-solid fa-shield-halved"></i>
-                Nhập username hoặc link Locket — nhận Gold &amp; DNS bảo vệ ngay tức thì.
+                <i class="fa-solid fa-lock"></i>
+                Chỉ cần <strong>locket link</strong> — an toàn tuyệt đối.
             </p>
         </header>
 
@@ -47,17 +96,24 @@
             <section class="card activation-card" id="activationSection">
                 <div class="card-header">
                     <div class="status-dot" id="statusDot"></div>
-                    <span class="card-title">Kích Hoạt Tài Khoản</span>
+                    <span class="card-title">Dán link Locket của bạn vào đây</span>
                 </div>
 
                 <form id="activateForm" autocomplete="off" novalidate>
                     <div class="input-group">
-                        <label for="usernameInput" class="input-label">Username / Link Locket</label>
+                        <label for="usernameInput" class="input-label">
+                            <i class="fa-solid fa-link"></i>
+                            Link trang cá nhân Locket
+                        </label>
                         <div class="input-wrapper">
-                            <i class="fa-solid fa-user input-icon"></i>
+                            <i class="fa-solid fa-link input-icon"></i>
                             <input type="text" id="usernameInput" name="username" class="text-input"
-                                placeholder="vd: johndoe  hoặc  locket.cam/johndoe" spellcheck="false" required />
+                                placeholder="locket.cam/tên_của_bạn" spellcheck="false" required />
                         </div>
+                        <p class="input-hint">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Mở app Locket → trang cá nhân → sao chép link → dán vào đây
+                        </p>
                     </div>
                     <button type="submit" class="btn-activate" id="activateBtn">
                         <span class="btn-text">
@@ -112,8 +168,8 @@
                         <code class="uid-value" id="resultUsername"></code>
                     </div>
                     <div class="uid-row">
-                        <span class="uid-label"><i class="fa-solid fa-calendar-days"></i> Plan</span>
-                        <code class="uid-value">Gold — 30 ngày</code>
+                        <span class="uid-label"><i class="fa-solid fa-crown"></i> Plan</span>
+                        <code class="uid-value">Locket Gold ✓</code>
                     </div>
 
                     <!-- DNS Guide -->
@@ -221,8 +277,8 @@
                             <i class="fa-solid fa-circle-question faq-icon"></i>
                             Gold có hết hạn không?
                         </summary>
-                        <p class="faq-a">Gold được kích hoạt 30 ngày. Sau khi hết hạn, bạn có thể kích hoạt lại bằng
-                            cách nhập lại username.</p>
+                        <p class="faq-a">Gold được kích hoạt theo chu kỳ. Sau khi hết hạn, bạn có thể kích hoạt lại bằng
+                            cách nhập lại username — cũng chỉ cần username, không cần gì thêm.</p>
                     </details>
                     <details class="faq-item">
                         <summary class="faq-q">
@@ -230,15 +286,17 @@
                             Cần nhập email hay username?
                         </summary>
                         <p class="faq-a">Bạn có thể nhập username Locket (vd: <code>johndoe</code>) hoặc dán thẳng link
-                            <code>locket.cam/johndoe</code>.</p>
+                            <code>locket.cam/johndoe</code>.
+                        </p>
                     </details>
                     <details class="faq-item">
                         <summary class="faq-q">
                             <i class="fa-solid fa-circle-question faq-icon"></i>
-                            Kích hoạt an toàn không?
+                            Có cần nhập mật khẩu không?
                         </summary>
-                        <p class="faq-a">Quá trình chỉ đọc UID công khai từ profile của bạn và gửi receipt qua API
-                            RevenueCat. Chúng tôi không lưu mật khẩu hay thông tin nhạy cảm.</p>
+                        <p class="faq-a"><strong>Không.</strong> Chúng tôi chỉ cần <strong>username</strong> (hoặc link
+                            locket.cam) để lấy UID công khai từ profile của bạn. Không yêu cầu mật khẩu, email đăng nhập
+                            hay bất kỳ thông tin nhạy cảm nào. Tuyệt đối an toàn.</p>
                     </details>
                 </div>
             </section>
