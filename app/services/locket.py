@@ -3,6 +3,7 @@ import json
 import re
 import time
 import asyncio
+from datetime import datetime, timezone
 from app.config import TOKEN_SETS # Import new structure
 
 HEADERS = {
@@ -90,9 +91,24 @@ async def check_status(uid):
                     entitlements = data.get('subscriber', {}).get('entitlements', {}).get('Gold', {})
                     if entitlements:
                         expires_date = entitlements.get('expires_date')
-                        return {"active": True, "expires": expires_date}
+                        if 'expires_date' not in entitlements:
+                            return {"active": False, "expires": None, "reason": "invalid_expiry"}
+                        if expires_date is None:
+                            return {"active": True, "expires": None}
+                        try:
+                            dates = [expires_date]
+                            grace_date = entitlements.get('grace_period_expires_date')
+                            if grace_date is not None:
+                                dates.append(grace_date)
+                            parsed = [datetime.fromisoformat(value.replace('Z', '+00:00')) for value in dates]
+                            if any(value.tzinfo is None for value in parsed):
+                                raise ValueError('Expiry must include a timezone')
+                            active = max(parsed) > datetime.now(timezone.utc)
+                        except (TypeError, ValueError, AttributeError):
+                            return {"active": False, "expires": expires_date, "reason": "invalid_expiry"}
+                        return {"active": active, "expires": expires_date, "reason": None if active else "expired"}
                     return {"active": False}
-                return {"active": False}
+                return None
     except Exception:
         return None
 
@@ -162,8 +178,16 @@ async def inject_gold(uid, token_config, log_callback=None):
                             if status and status.get('active'):
                                 log(f"{Clr.GREEN}[SUCCESS] Gold Active after delay.{Clr.ENDC}")
                                 return True, "SUCCESS"
-                            log(f"{Clr.FAIL}[-] Exploitation Failed: Valid receipt but no Gold.{Clr.ENDC}")
-                            return False, "Accepted but NO Gold (Expired?)"
+                            if status is None:
+                                message = "Receipt accepted, but Gold status could not be verified."
+                            elif status.get('reason') == 'expired':
+                                message = f"Receipt accepted, but Gold expired at {status['expires']}."
+                            elif status.get('reason') == 'invalid_expiry':
+                                message = "Receipt accepted, but Gold expiry could not be verified."
+                            else:
+                                message = "Receipt accepted, but no Gold entitlement was granted."
+                            log(f"{Clr.FAIL}[-] {message}{Clr.ENDC}")
+                            return False, message
                             
                     elif status_code == 529:
                         log(f"{Clr.WARNING}[!] Server Busy (529). Cooldown 2s...{Clr.ENDC}")
